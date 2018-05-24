@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SQLite Editor</string>
+    <string name="app_intro">
+        "SQLite Editor" used to create/retrieve/update/delete SQLite Database\n\n
+        Notice: the application icon WILL NOT appear in the launcher.\n\n
+        Copyright © 2017&#8211;2018 Yaerin All rights reserved.\n
+    </string>
+    <string name="app_notice">Notice: the application icon WILL NOT appear in the launcher.</string>
+    <string name="action_know">I know</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_redo">Redo</string>
+    <string name="action_save">Save</string>
+    <string name="title_edit">Edit %s [%s]</string>
+    <string name="open_source">Open Source</string>
+    <string name="hint_edit">New value</string>
+    <string name="err_primary_key">
+        There is no physical unique key defined
+    </string>
+    <string name="err_blob_data">
+        Cannot edit BLOB data
+    </string>
+</resources>

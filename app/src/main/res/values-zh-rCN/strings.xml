@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SQLite编辑器</string>
+    <string name="app_intro">
+        “SQLite编辑器”用于对SQLite数据库进行增删改查等操作。\n\n
+        注意：本应用的图标不需要也将不会出现在启动器中。\n\n
+        Copyright © 2017&#8211;2018 Yaerin All rights reserved.\n
+    </string>
+    <string name="app_notice">注意：本应用的图标不需要也将不会出现在启动器中。</string>
+    <string name="action_know">我知道了</string>
+    <string name="action_ok">确定</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_undo">撤销</string>
+    <string name="action_redo">重做</string>
+    <string name="action_save">保存</string>
+    <string name="title_edit">编辑 %s [%s]</string>
+    <string name="open_source">开源地址</string>
+    <string name="hint_edit">新数据</string>
+    <string name="err_primary_key">
+        未定义唯一键
+    </string>
+    <string name="err_blob_data">
+        不能编辑BLOB数据
+    </string>
+</resources>
