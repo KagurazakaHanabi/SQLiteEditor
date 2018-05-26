@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -94,7 +93,7 @@ public class TableActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.ctrl, menu);
+        getMenuInflater().inflate(R.menu.table, menu);
         return true;
     }
 
@@ -300,7 +299,6 @@ public class TableActivity extends Activity {
                 return;
             }
 
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             View view = View.inflate(TableActivity.this, R.layout.dialog_edit, null);
             EditText editText = view.findViewById(R.id.edit_text);
             editText.setText(value);
@@ -310,7 +308,7 @@ public class TableActivity extends Activity {
                     .setTitle(getString(R.string.title_edit,
                             name, type + (notNull ? " NOT NULL" : "")))
                     .setView(view)
-                    .setNegativeButton(R.string.action_cancel, (dialog, which) -> dialog.cancel())
+                    .setNegativeButton(R.string.action_cancel, (dialog, which) -> dialog.dismiss())
                     .setPositiveButton(R.string.action_ok, (dialog, which) -> {
                         String newValue = editText.getText().toString();
                         if (TextUtils.isEmpty(newValue) && notNull) {
@@ -329,10 +327,6 @@ public class TableActivity extends Activity {
                     })
                     .create()
                     .show();
-
-            if (imm != null) {
-                imm.showSoftInput(editText, InputMethodManager.SHOW_FORCED);
-            }
         }
     }
 }

@@ -13,9 +13,16 @@
     <string name="action_undo">Undo</string>
     <string name="action_redo">Redo</string>
     <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_create_table">Create table</string>
+    <string name="action_exec_sql">Execute SQL</string>
+    <string name="title_open_source">Open Source</string>
     <string name="title_edit">Edit %s [%s]</string>
-    <string name="open_source">Open Source</string>
+    <string name="title_confirm">Are you sure?</string>
+    <string name="message_irreversible">This operation is irreversible.</string>
+    <string name="message_success">Success</string>
     <string name="hint_edit">New value</string>
+    <string name="hint_sql">Type SQL statements here</string>
     <string name="err_primary_key">
         There is no physical unique key defined
     </string>

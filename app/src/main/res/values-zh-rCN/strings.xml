@@ -13,9 +13,16 @@
     <string name="action_undo">撤销</string>
     <string name="action_redo">重做</string>
     <string name="action_save">保存</string>
+    <string name="action_delete">删除</string>
+    <string name="action_create_table">新建表</string>
+    <string name="action_exec_sql">执行SQL</string>
+    <string name="title_open_source">开源地址</string>
     <string name="title_edit">编辑 %s [%s]</string>
-    <string name="open_source">开源地址</string>
+    <string name="title_confirm">你确定？</string>
+    <string name="message_irreversible">此操作不可逆。</string>
+    <string name="message_success">Success</string>
     <string name="hint_edit">新数据</string>
+    <string name="hint_sql">在此输入SQL语句</string>
     <string name="err_primary_key">
         未定义唯一键
     </string>

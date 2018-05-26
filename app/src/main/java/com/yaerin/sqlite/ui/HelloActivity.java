@@ -13,13 +13,13 @@ import android.view.MenuItem;
 
 import com.yaerin.sqlite.R;
 
-public class AboutActivity extends Activity {
+public class HelloActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         findViewById(R.id.action_ok).setOnClickListener(v ->
-                new AlertDialog.Builder(AboutActivity.this)
+                new AlertDialog.Builder(HelloActivity.this)
                         .setCancelable(false)
                         .setMessage(R.string.app_notice)
                         .setPositiveButton(R.string.action_know, (dialog, which) -> finish())
@@ -29,7 +29,7 @@ public class AboutActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.hello, menu);
         return true;
     }
 

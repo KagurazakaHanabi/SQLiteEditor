@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/action_view"
-        android:icon="@drawable/ic_github_circle_white_24dp"
+    <!--<item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_add_white_24dp"
         android:showAsAction="always"
-        android:title="@string/open_source" />
+        android:title="@string/action_create_table" />-->
+    <item
+        android:id="@+id/action_exec"
+        android:icon="@drawable/ic_console_line_white_24dp"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_exec_sql" />
 </menu>
