@@ -30,6 +30,7 @@ import com.yaerin.sqlite.bean.Cell;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class TableActivity extends Activity {
 
@@ -161,6 +162,12 @@ public class TableActivity extends Activity {
         return true;
     }
 
+    @Override
+    protected void onDestroy() {
+        mDatabase.close();
+        super.onDestroy();
+    }
+
     private void execSQLs() {
         for (String sql : mUndoList) {
             mDatabase.execSQL(sql);
@@ -214,6 +221,7 @@ public class TableActivity extends Activity {
         return data;
     }
 
+    @Nullable
     private String getPrimaryKey(String sql) {
         String primaryKey = null;
         int start = sql.indexOf("(") + 1;
@@ -222,8 +230,9 @@ public class TableActivity extends Activity {
         String[] arr = sql.replaceAll("\\s+", " ").split(",");
         for (String s : arr) {
             s = s.trim();
-            if (s.matches(".*PRIMARY\\s+KEY.*")) {
-                primaryKey = s.split("\\s+")[0];
+            if (Pattern.compile(".*PRIMARY\\s+KEY.*",
+                    Pattern.CASE_INSENSITIVE).matcher(s).matches()) {
+                primaryKey = s.split("\\s+")[0].replaceAll("\"", "");
             }
         }
         return primaryKey;
@@ -244,7 +253,7 @@ public class TableActivity extends Activity {
         }
 
         Cursor c = mDatabase.rawQuery(
-                "SELECT " + primaryKey + "," + name + " FROM " + mTableName, null);
+                String.format("SELECT \"%s\",\"%s\" FROM \"%s\"", primaryKey, name, mTableName), null);
         c.moveToPosition(row);
         String key = c.getString(c.getColumnIndex(primaryKey));
         String value = c.getString(c.getColumnIndex(name));
@@ -314,7 +323,7 @@ public class TableActivity extends Activity {
                         if (TextUtils.isEmpty(newValue) && notNull) {
                             Toast.makeText(TableActivity.this,
                                     "NOT NULL", Toast.LENGTH_SHORT).show();
-                        } else {
+                        } else if (!newValue.equals(value)) {
                             String sql = buildSQL(col, row, name, newValue);
                             if (sql != null) {
                                 mUndoList.add(sql);

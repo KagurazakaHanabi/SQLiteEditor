@@ -126,6 +126,12 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         return true;
     }
 
+    @Override
+    protected void onDestroy() {
+        mDatabase.close();
+        super.onDestroy();
+    }
+
     private void main() {
         try {
             openDatabase();
