@@ -86,8 +86,7 @@ public class TableActivity extends Activity {
         mTableName = getIntent().getStringExtra(C.EXTRA_TABLE_NAME);
 
         String[] arr = path.split("/");
-        setTitle("`" + arr[arr.length - 1].replaceAll("\\.db$", "") +
-                "`." + mTableName);
+        setTitle("`" + arr[arr.length - 1].replaceAll("\\.db$", "") + "`." + mTableName);
 
         init();
     }

@@ -168,14 +168,13 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     private void openDatabase() {
         String[] arr = mPath.split("/");
         setTitle("`" + arr[arr.length - 1].replaceAll("\\.db$", "") + "`");
-        mDatabase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.OPEN_READWRITE);
+        mDatabase = SQLiteDatabase.openDatabase(mPath, null, SQLiteDatabase.OPEN_READWRITE, sqLiteDatabase -> {
+        });
     }
 
     private List<String> getTableNames() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = mDatabase.rawQuery(
-                "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name",
-                null);
+        Cursor cursor = mDatabase.rawQuery("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name", null);
         while (cursor.moveToNext()) {
             list.add(cursor.getString(0));
         }

@@ -19,14 +19,10 @@
     <string name="title_open_source">Open Source</string>
     <string name="title_edit">Edit %s [%s]</string>
     <string name="title_confirm">Are you sure?</string>
-    <string name="message_irreversible">This operation is irreversible.</string>
+    <string name="message_irreversible">This action is irreversible.</string>
     <string name="message_success">Success</string>
     <string name="hint_edit">New value</string>
     <string name="hint_sql">Type SQL statements here</string>
-    <string name="err_primary_key">
-        There is no physical unique key defined
-    </string>
-    <string name="err_blob_data">
-        Cannot edit BLOB data
-    </string>
+    <string name="err_primary_key">There is no physical unique key defined</string>
+    <string name="err_blob_data">Cannot edit BLOB data</string>
 </resources>
