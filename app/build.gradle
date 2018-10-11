@@ -3,12 +3,11 @@ import java.text.SimpleDateFormat
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.yaerin.sqlite"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode getMyVersionCode()
         versionName getMyVersionName()
     }
@@ -26,7 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'androidx.annotation:annotation:1.0.0'
     implementation 'com.github.huangyanbin:SmartTable:2.2.0'
 }
 
@@ -35,5 +34,5 @@ static def getMyVersionCode() {
 }
 
 static def getMyVersionName() {
-    return "1.0.4." + "git describe --always".execute().getText().trim()
+    return "1.0.5." + "git describe --always".execute().getText().trim()
 }

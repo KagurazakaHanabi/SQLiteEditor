@@ -7,11 +7,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.yaerin.sqlite.R;
+
+import androidx.annotation.Nullable;
 
 public class HelloActivity extends Activity {
     @Override

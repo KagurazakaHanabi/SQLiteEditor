@@ -31,9 +31,6 @@
                 <data android:mimeType="application/x-sqlite2" />
                 <data android:mimeType="application/x-sqlite3" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.TableActivity"
